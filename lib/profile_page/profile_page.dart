@@ -49,7 +49,7 @@ class ProfilePage extends StatelessWidget {
                     border: Border.all(color: AppColors.gryLightColor),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.buttonColor.withOpacity(0.1),
+                        color: AppColors.buttonColor.withOpacity(0.2),
                         blurRadius: 95,
                         offset: Offset(0, 15),
                       ),
@@ -220,10 +220,7 @@ class ProfilePage extends StatelessWidget {
               ),
             ],
           ),
-
           SizedBox(height: 30),
-
-
         ],
       ),
     );

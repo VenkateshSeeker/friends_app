@@ -17,8 +17,12 @@ class Splashscreen extends StatelessWidget {
             width: mediaQ.width,
             decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage("assets/splash.jpg"),
+                fit: BoxFit.fitHeight,
+                image: AssetImage("assets/night.jpg"),
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.6),
+                  BlendMode.darken,
+                ),
               ),
             ),
             child: Padding(
