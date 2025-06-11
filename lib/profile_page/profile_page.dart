@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../chat_screen/chat_screen.dart';
 import '../core/app_colors.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -170,22 +171,30 @@ class ProfilePage extends StatelessWidget {
                       SizedBox(height: 20),
                       Row(
                         children: [
-                          Expanded(
-                            child: Container(
-                              width: mediaQ.width / 2.0 - 12,
-                              padding: EdgeInsets.all(12),
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(18),
-                                border: Border.all(
-                                  color: AppColors.buttonColor,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (_) => ChatScreen()),
+                              );
+                            },
+                            child: Expanded(
+                              child: Container(
+                                width: mediaQ.width / 2.0 - 12,
+                                padding: EdgeInsets.all(12),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(18),
+                                  border: Border.all(
+                                    color: AppColors.buttonColor,
+                                  ),
                                 ),
-                              ),
-                              child: Text(
-                                "Chat",
-                                style: GoogleFonts.inter(
-                                  fontSize: 20,
-                                  color: AppColors.buttonColor,
+                                child: Text(
+                                  "Chat",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    color: AppColors.buttonColor,
+                                  ),
                                 ),
                               ),
                             ),

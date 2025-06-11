@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../chat_screen/chat_screen.dart';
 import '../home_screen/home_screen.dart';
 import '../profile_page/profile_page.dart';
 
@@ -15,15 +16,37 @@ class _NavBarState extends State<NavBar> {
 
   final List<Widget> _screens = [
     HomeScreen(),
-    Center(child: Text('Chat Screen')),
+    ChatScreen(),
     Center(child: Text('Profile Screen')),
     ProfilePage(),
   ];
+
+  // void _onTabTapped(int index) {
+  //   setState(() {
+  //     _currentIndex = index;
+  //   });
+  // }
 
   void _onTabTapped(int index) {
     setState(() {
       _currentIndex = index;
     });
+
+    switch (index) {
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+        );
+        break;
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ChatScreen()),
+        );
+        break;
+      // add more cases as needed
+    }
   }
 
   List<IconData> icons = [Icons.home, Icons.chat, Icons.person, Icons.settings];

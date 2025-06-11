@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.centerRight,
             end: Alignment.bottomCenter,
-            colors: [Color(0xff1a0500), Color(0xff541218)],
+            colors: [Color(0xff000000), Color(0xff541218)],
           ),
         ),
         child: SingleChildScrollView(
@@ -34,19 +34,35 @@ class LoginPage extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Image.asset(
-                          "assets/login1.png",
-                          width: mediaQ.width,
-                          height: mediaQ.height * 0.3,
-                          // fit: BoxFit.cover,
-                        ),
-                      ),
-                      Expanded(
-                        child: Image.asset(
-                          "assets/login2.png",
-                          width: mediaQ.width,
-                          height: mediaQ.height * 0.3,
-                          // fit: BoxFit.cover,
+                        child: Stack(
+                          children: [
+                            // Your GIF image
+                            Image.asset(
+                              "assets/login.gif",
+                              width: mediaQ.width,
+                              height: mediaQ.height * 0.3,
+                              fit: BoxFit.cover,
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              height:
+                                  80, // Adjust this for how much of a fade you want
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.bottomCenter,
+                                    end: Alignment.topCenter,
+                                    colors: [
+                                      Colors.black.withOpacity(0.8),
+                                      Colors.transparent,
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
